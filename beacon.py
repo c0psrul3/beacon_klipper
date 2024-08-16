@@ -62,6 +62,21 @@ class BeaconProbe:
             {"contact": "contact", "proximity": "proximity"},
             "proximity",
         )
+        self.home_method = config.getchoice(
+            "home_method",
+            {"contact": "contact", "proximity": "proximity"},
+            "proximity",
+        )
+        self.home_method_when_homed = config.getchoice(
+            "home_method_when_homed",
+            {"contact": "contact", "proximity": "proximity"},
+            "proximity",
+        )
+        self.home_autocalibrate = config.getchoice(
+            "home_autocalibrate", 
+            {"never": "never", "unhomed": "unhomed", "always": "always"},
+            "always",
+        )
 
         # If using paper for calibration, this would be .1mm
         self.cal_nozzle_z = config.getfloat("cal_nozzle_z", 0.1)
